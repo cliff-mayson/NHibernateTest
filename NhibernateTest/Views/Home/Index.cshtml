@@ -1,0 +1,46 @@
+﻿@model NhibernateTest.Models.HomeModel
+
+<div class="jumbotron">
+    <h1>NHibernate Test</h1>
+    
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Authors</h2>
+
+        @if (Model.Authors.Any())
+        {
+            <table>
+                @foreach (var author in Model.Authors)
+                {
+                    <tr>
+                        <td>FirstName:</td>
+                        <td>@author.FirstName</td>
+                    </tr>
+                    <tr>
+                        <td>LastName:</td>
+                        <td>@author.LastName</td>
+                    </tr>
+                    <tr>
+                        <td>Books:</td>
+                    </tr>
+                    foreach (var book in author.Books)
+                    {
+                        <tr>
+                            <td>Title:</td>
+                            <td>@book.Title</td>
+                        </tr>
+                        <tr>
+                            <td>Book Type:</td>
+                            <td>@book.Type</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                }
+
+            </table>
+        }
+    </div>
+</div>
